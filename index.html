@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrowBridge</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="img/jpg" href="./Images/leaf.png">
+
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="/Images/istockphoto-1162712799-640_adpp_is (online-video-cutter.com).mp4" type="video/mp4">
+    </video>
+    
+    <h1>
+        <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to the GrowBridge.","Where Innovation meets Financing." ]'>
+          <span class="wrap"></span>
+        </a>
+      </h1>
+    
+    <img src="/Images/Logo-removebg-preview (1).png" alt="Logo" class="logo">
+    
+    <button id="login" class="button" onclick="window.location.href = 'login.html'">Login</button>
+    <button class="button" onclick="window.location.href = 'register.html'">Register</button>
+    
+    <script>
+        function login() {
+            // Add your login logic here
+            console.log("Login button clicked");
+        }
+        
+        function register() {
+            // Add your register logic here
+            console.log("Register button clicked");
+        }
+        
+        
+        var TxtType = function(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+        
+            TxtType.prototype.tick = function() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+        
+                if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+        
+                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+        
+                if (this.isDeleting) { delta /= 2; }
+        
+                if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 600;
+                }
+        
+                setTimeout(function() {
+                that.tick();
+                }, delta);
+            };
+        
+            window.onload = function() {
+                var elements = document.getElementsByClassName('typewrite');
+                for (var i=0; i<elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-type');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                      new TxtType(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // INJECT CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                document.body.appendChild(css);
+            };
+              
+    </script>
+</body>
+</html>

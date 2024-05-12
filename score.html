@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="score.css">
+   
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="/Images/istockphoto-1162712799-640_adpp_is (online-video-cutter.com).mp4" type="video/mp4">
+    </video>
+    
+    <h1>
+        <a href="" class="typewrite" data-period="2000" data-type='[ "Calculate Your Scires"]'>
+          <span class="wrap">Calculate Your Scores</span>
+        </a>
+      </h1>
+    
+    <img src="/Images/Logo-removebg-preview (1).png" alt="Logo" class="logo">
+    
+    <button id="login" class="button" onclick="window.location.href =  'https://www.bankbazaar.com/cibil/cibil-score-calculation.html?ck=Y%2BziX71XnZjIM9ZwEflsyCu5g0osYx%2ByXts24P7rMyxAevB1eS8eCGuBkX8I0T6I'">CIBIL Score</button>
+    <button class="button" onclick="window.location.href ='https://www.calcxml.com/calculators/credit-score-calculator-new'">Credit Score</button>
+    
+    
+
+    <form>
+        <label for="cibil-score">CIBIL Score:</label>
+        <input type="number" id="cibil-score" name="cibil-score">
+        
+        <label for="credit-score">Credit Score:</label>
+        <input type="number" id="credit-score" name="credit-score">
+        <button type="submit">Submit</button>
+    </form>
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent form submission
+    
+    // Get the CIBIL score value
+    var cibilScore = parseInt(document.getElementById('cibil-score').value);
+    var creditScore = parseInt(document.getElementById('credit-score').value);
+    
+    if (cibilScore >= 300 && creditScore >= 300) {
+        alert("You can get a loan. Click ok to proceed further.");
+        window.location.href = 'sanction.html';
+    }  else {
+        alert("Thank you for visiting us. Unfortunately, you don't have a chance to get a loan. Click ok. ");window.location.href = 'dashboard.html';
+    }
+});
+</script>
+   
+    
+</body>
+</html>

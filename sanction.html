@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <style>
+        
+        h1{
+            font-family: sans-serif;
+        
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 20px
+        }
+        .container {
+            
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            width: 800px;
+            margin: 0 auto;
+        }
+        .label {
+            font-family: sans-serif;
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .input {
+            font-family: sans-serif;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .select {
+            font-family: sans-serif;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            font-family: sans-serif;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 25%;   
+        }
+        #date {
+            width: 200px;
+        }
+        .last {
+            width: 800px;
+            margin-top: 20px;
+            font-size: 17px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .last pre {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 600px){
+            .container {
+                width: 200px;
+            }
+        }
+
+        @media screen and (max-width: 700px){
+            .container {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sanction Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="loanType" class="label">Loan Type</label>
+                <input type="text" id="loanType" name="loanType" class="input" placeholder="Enter Loan Type">
+            </div>
+            <div class="form-group">
+                <label for="loanAccountNumber" class="label">Loan Account Number</label>
+                <input type="text" id="loanAccountNumber" name="loanAccountNumber" class="input" placeholder="Enter Loan Account Number">
+            </div>
+            <div class="form-group">
+                <label for="loanAmount" class="label">Loan Amount Sanctioned</label>
+                <input type="text" id="loanAmount" name="loanAmount" class="input" placeholder="e.g., Rs. 10,000">
+            </div>
+            <div class="form-group">
+                <label for="interestRate" class="label">Interest Rate</label>
+                <input type="text" id="interestRate" name="interestRate" class="input" placeholder="e.g., Fixed or Floating with details">
+            </div>
+            <div class="form-group">
+                <label for="loanTenure" class="label">Loan Tenure</label>
+                <input type="text" id="loanTenure" name="loanTenure" class="input" placeholder="Duration of the loan in months/years">
+            </div>
+            <div class="form-group">
+                <label for="emiAmount" class="label">EMI Amount</label>
+                <input type="text" id="emiAmount" name="emiAmount" class="input" placeholder=" e.g., Rs. 500">
+            </div>
+            <div class="form-group">
+                <label for="processingFee" class="label">Processing Fee</label>
+                <input type="text" id="processingFee" name="processingFee" class="input" placeholder="If any, with details">
+            </div>
+            <div id="date" class="form-group">
+                <label for="disbursementDate" class="label">Disbursement Date</label>
+                <input type="date" id="disbursementDate" name="disbursementDate" class="input">
+            </div>
+            <div class="form-group">
+                <label for="repaymentSchedule" class="label">Repayment Schedule</label>
+                <textarea id="repaymentSchedule" name="repaymentSchedule" class="input" rows="4" placeholder="Details of installment payments, including the start date"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="collateralDetails" class="label">Collateral Details</label>
+                <textarea id="collateralDetails" name="collateralDetails" class="input" rows="4" placeholder="Details of any collateral provided"></textarea>
+            </div>
+
+            <div class="last">
+                <pre>Please note that this sanction is subject to the terms and conditions outlined in 
+the loan agreement and the bank's policies. We kindly request you to carefully review
+the terms and conditions mentioned in the loan agreement, which will be provided
+to you separately.</pre>
+
+<pre>If you agree to accept the loan on the terms specified, please sign the duplicate 
+copy of this letter as a token of acceptance and return it to us within 
+10 days from the date of issuance.</pre>
+
+<pre>Thank you for choosing GrowBridge for your financial needs. We look forward to a 
+long and mutually beneficial relationship.</pre>Yes, I agree
+<input type="checkbox" style="margin-right: 1000px;" id="agreement" name="agreement" required >
+            </div><br>
+            <button type="submit">Submit</button>
+            <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=udl5op3m&n=n1.ratufa.io"></script>
+        </form>
+    </div>
+</body>
+</html>
